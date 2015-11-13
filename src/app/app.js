@@ -12,15 +12,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = 'Tour of Heroes';
+        this.hero = {
+            id: 1,
+            name: 'Windstorm'
+        };
     }
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app',
-            template: '<h1>My First Angular 2 App</h1>'
+            template: "<h1>{{title}}</h1>\n    </h2>{{hero.name}} details!</h2>\n    <div><label>id: </label>{{hero.id}}</div>\n    <div>\n      <label>name: </label>\n      <div><input [(ng-model)]=\"hero.name\" placeholder=\"name\"></div>\n    </div>",
+            directives: [angular2_1.FORM_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
+})();
+var Hero = (function () {
+    function Hero() {
+    }
+    return Hero;
 })();
 angular2_1.bootstrap(AppComponent);
 //# sourceMappingURL=app.js.map
